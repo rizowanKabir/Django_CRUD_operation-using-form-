@@ -1,0 +1,14 @@
+{% extends "master/base.html" %}
+
+{% block content %}
+<h1 style="text-align:center;"> Edit Salary</h1>
+
+<div class="form-container">
+    <form method="POST">
+        {% csrf_token %}
+        {{salary_form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

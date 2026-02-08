@@ -1,0 +1,84 @@
+{% extends "master/base.html" %}
+
+{% block content %}
+
+<style>
+    /* Full width hero section */
+    .hero {
+        width: 100%;
+        height: 90vh;
+        background-image: url('https://images.unsplash.com/photo-1581091215365-0f5d3f204f8c?auto=format&fit=crop&w=1470&q=80'); /* University / Campus image */
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5); /* dark overlay for text readability */
+        top: 0;
+        left: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+
+    .hero .btn {
+        padding: 12px 30px;
+        background: #38bdf8;
+        color: #0f172a;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+    .hero .btn:hover {
+        background: #0ea5e9;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to IUBAT University</h1>
+        <p>Empowering students to achieve excellence in education, research, and innovation.</p>
+        <a href="{% url 'register_page' %}" class="btn">Get Started</a>
+    </div>
+</div>
+
+{% endblock %}

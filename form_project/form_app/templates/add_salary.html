@@ -1,0 +1,14 @@
+{% extends "master/base.html" %}
+
+{% block content %}
+<h1 style="text-align:center;"> Add Salary</h1>
+
+<div class="form-container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{salary_form}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

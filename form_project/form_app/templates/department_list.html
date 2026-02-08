@@ -1,0 +1,27 @@
+{% extends "master/base.html" %}
+
+{% block content %}
+<h1 class="page-title">Department List</h1>
+
+<div style="text-align:center;">
+    <a href="{% url 'add_department' %}" class="add-btn">Add Department</a>
+</div>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    {% for data in dept_data %}
+    <tr>
+        <td>{{data.name}}</td>
+        <td>{{data.description}}</td>
+        <td class="action-btn">
+            <a href="{% url 'edit_department' data.id %}">Edit</a>
+            <a href="{% url 'delete_department' data.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

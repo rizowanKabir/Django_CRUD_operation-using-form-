@@ -1,0 +1,33 @@
+{% extends "master/base.html" %}
+
+{% block content %}
+<h1 class="page-title">Salary List</h1>
+
+<div style="text-align:center;">
+    <a href="{% url 'add_salary' %}" class="add-btn">Add Salary</a>
+</div>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Basic Salary</th>
+        <th>Bonus</th>
+        <th>Total Salary</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    {% for salary in salary_data %}
+    <tr>
+        <td>{{salary.employee}}</td>
+        <td>{{salary.basic_salary}}</td>
+        <td>{{salary.bonus}}</td>
+        <td>{{salary.total_salary}}</td>
+        <td>{{salary.status}}</td>
+        <td>
+            <a href="{% url 'edit_salary' salary.id %}">Edit</a>
+            <a href="{% url 'delete_salary' salary.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
